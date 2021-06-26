@@ -465,24 +465,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.07968055
   m_Center: {x: 0, y: 0.06, z: -0.12196782}
---- !u!114 &308406446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 308406442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81d854be133964ab0b7523f5f3013613, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointType: 2
-  gameConfig: {fileID: 11400000, guid: 97f07a9227a43493a800eb51f8012d17, type: 2}
-  GameScreenCanvas: {fileID: 0}
-  starParticles: {fileID: 0}
-  food: {fileID: 6039434055822442392, guid: cf541504845f1457e96fa9fc93b638fd, type: 3}
-  player: 0
 --- !u!1 &565311866
 GameObject:
   m_ObjectHideFlags: 0
