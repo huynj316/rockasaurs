@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scenes/PortalAR.unity
     guid: e5260c3f78a044ba296c4f170fb168fe
-  - enabled: 1
+  - enabled: 0
     path: Assets/Project/Scenes/PortalVR.unity
     guid: 1a762c75fbb1d4609aaf2c74456a941e
   m_configObjects: {}
