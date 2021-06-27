@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class SceneController : MonoBehaviour
 {
@@ -10,6 +10,8 @@ public class SceneController : MonoBehaviour
     private Canvas myCanvas;
     private GameObject breakObject;
     private GameObject feelingsObject;
+    private VideoPlayer videoPlayer;
+    private GameObject videoObject;
 
     public GameObject faceParticle;
 
@@ -24,6 +26,7 @@ public class SceneController : MonoBehaviour
     // called zero
     void Awake()
     {
+        videoPlayer = FindObjectOfType<VideoPlayer>();
         audioSource = GetComponent<AudioSource>();
         myCanvas = FindObjectOfType<Canvas>();
         breakObject = myCanvas.transform.GetChild(0).gameObject;
@@ -35,6 +38,8 @@ public class SceneController : MonoBehaviour
         faceParticle.SetActive(false);
         feelingsObject = myCanvas.transform.GetChild(3).gameObject;
         feelingsObject.SetActive(false);
+        videoObject = myCanvas.transform.GetChild(4).gameObject;
+        videoObject.SetActive(false);
         //Debug.Log("Awake");
     }
 
@@ -92,7 +97,20 @@ public class SceneController : MonoBehaviour
         shakingObject.SetActive(false);
         faceParticle.SetActive(false);
         audioSource.Stop();
-        feelingsObject.SetActive(true);
+        feelingsObject.SetActive(false);
+        videoObject.SetActive(false);
+    }
+
+    public void Sad()
+    {
+        feelingsObject.SetActive(false);
+        audioSource.Stop();
+        videoObject.SetActive(true);
+        if (videoObject.activeSelf == true)
+            videoPlayer.Play();
+
+        StartCoroutine("Feelings", 12f);
+
     }
 
     private IEnumerator Feelings(float delay)
@@ -105,10 +123,10 @@ public class SceneController : MonoBehaviour
     {
         breakObject.SetActive(false);
         shakeObject.SetActive(false);
-        shakingObject.SetActive(true);
+        //shakingObject.SetActive(true);
         faceParticle.SetActive(true);
         audioSource.Play();
-        StartCoroutine("Feelings", 10f);
+        StartCoroutine("Feelings", 5f);
     }
 
 
