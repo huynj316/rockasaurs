@@ -104,6 +104,7 @@ public class SceneController : MonoBehaviour
     public void Sad()
     {
         feelingsObject.SetActive(false);
+        faceParticle.SetActive(false);
         audioSource.Stop();
         videoObject.SetActive(true);
         if (videoObject.activeSelf == true)
